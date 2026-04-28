@@ -1,0 +1,227 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himalayan Resort</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f1ea;
+}
+
+/* Header */
+header {
+    background: #2e4d3a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    background: #3e6b52;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+nav .logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+}
+
+/* Sections */
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    background: #2e4d3a;
+    color: white;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background: #2e4d3a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #3e6b52;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        font-size: 20px;
+        height: 200px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Himalayan Resort</h1>
+    <p>Experience Nature & Peace</p>
+</header>
+
+<nav>
+    <div class="logo">Resort</div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#login">Login</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    Welcome to Himalayan Paradise
+</div>
+
+<div class="section">
+    <h2>Our Rooms</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+            <h3>Deluxe Room</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+            <h3>Suite Room</h3>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="booking">
+    <h2>Book Your Stay</h2>
+    <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="date" required>
+        <select>
+            <option>Room Type</option>
+            <option>Deluxe</option>
+            <option>Suite</option>
+        </select>
+        <button>Book Now</button>
+    </form>
+</div>
+
+<div class="section" id="login">
+    <h2>Login</h2>
+    <form>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2026 Himalayan Resort</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
